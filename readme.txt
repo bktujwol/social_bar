@@ -1,19 +1,19 @@
 === Social Bar ===
 Contributors: ujw0l
-Tags: Social Media,Social Networking, Widget,Social Bar, Facebook, Twitter, LinkedIn, Google Plus, Follow
+Tags: Social, Media,Social Networking, Widget,share, Facebook, Twitter, LinkedIn, Google Plus, Follow, ,share post
 Requires at least: 2.8	+
 Tested up to: 4.9
-Stable tag: 1.2.0
+Stable tag: 2.0.0
 License: GPLv2
 
-Plugin to display Facebook, Twitter, Google Plus and LinkedIn as widget	on sidebar or footer. 
+Plugin to display Facebook, Twitter, Pinterest,Google Plus and LinkedIn as widget	on sidebar or footer, where vistor can share page as well as visit you social media profile  . 
 
 
 == Description ==
 
-Plugin lets you to display Facebook, Twitter, Google Plus and LinkedIn on as widget on sidebar and with the theme that supports sidebar or Footer
+Plugin lets you to display Facebook, Twitter,Pinterest, Google Plus and LinkedIn on as widget on sidebar and with the theme that supports sidebar or Footer
 
-It is very light weight and doesn't use too many javascript codes, just gives user options to Follow Share using Endpoint.
+It is very light weight and doesn't use any javascript codes, just gives user options to Follow Share using Endpoint, no API key needed.
 
 
 
@@ -38,14 +38,19 @@ Note:
 
 = Why can't I customize it ? =
 
-This is the first release, keep reviewing the plugin so i will know what people are looking for.  
+This is the version 2.0 keep reviewing the plugin so i will know what people are looking for, I'm working on other features.  
 
+= Why can't I display followers and likes and posts ? =
+
+To use those services from social networking site you have to compromise the speed of you site most of the site, this plugin doesn't use
+those web services so sharing and following page through this site is like havinf link in you site, you site does not have to stay connected
+to those sites which makes you site faster.
 
 = Where can I use this plugin? =
 
 You can use this plugin to display social bar on sidebar or Footer.
 
-= How to not display any of the four Social Icons? =
+= How to not display any of the  Social Icon? =
 
 Just leave the URL field/s empty and particular social media icon/s will not display in widget 
 
@@ -74,7 +79,23 @@ Just leave the URL field/s empty and particular social media icon/s will not dis
 * Follow and share links are rearranged.
 * Added link to surpport and support on backend.
 
-= 1.1.0 =
+= 1.2.0 =
 * Removed animation for tooltip.
 * Only follow allowed as some of the features are discontinued by Social Media Companies.
 * More ligh weight and cross browser compatible
+
+= 1.2.1 =
+*Titter hastag are back with site owner twitter account included
+*Some minor CSS styling improvement
+*New chronology for sites based on their popularity
+*On hover sisplays tools tip on share and profile link
+
+= 1.2.1 =
+*Pinterest added users can now pin the page and visit pinterest profile
+*Some major CSS styling improvement
+*New chronology for sites based on their popularity
+*Smaller icons and more responsive
+*Different icon added
+*No more images and javascript  just CSS and fonts
+ 
+
