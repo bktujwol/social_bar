@@ -1,9 +1,9 @@
 === Social Bar ===
 Contributors: ujw0l
-Tags: Social, Media,Social Networking, Widget,share, Facebook, Twitter, LinkedIn,Follow, ,share post
+Tags: Social, Media,Social Networking, Widget,share, Facebook, Twitter, LinkedIn, Google Plus, Follow, ,share post
 Requires at least: 2.8	+
-Tested up to: 5.1.1
-Stable tag: 2.1.0
+Tested up to: 4.9
+Stable tag: 2.0.0
 License: GPLv2
 
 Plugin to display Facebook, Twitter, Pinterest,Google Plus and LinkedIn as widget	on sidebar or footer, where vistor can share page as well as visit you social media profile  . 
@@ -11,7 +11,7 @@ Plugin to display Facebook, Twitter, Pinterest,Google Plus and LinkedIn as widge
 
 == Description ==
 
-Plugin lets you to display Facebook, Twitter,Pinterest and LinkedIn on as widget on sidebar and with the theme that supports sidebar or Footer
+Plugin lets you to display Facebook, Twitter,Pinterest, Google Plus and LinkedIn on as widget on sidebar and with the theme that supports sidebar or Footer
 
 It is very light weight and doesn't use any javascript codes, just gives user options to Follow Share using Endpoint, no API key needed.
 
@@ -97,8 +97,5 @@ Just leave the URL field/s empty and particular social media icon/s will not dis
 *Smaller icons and more responsive
 *Different icon added
 *No more images and javascript  just CSS and fonts
-
-= 2.1.0 =
-*Google removed
  
 

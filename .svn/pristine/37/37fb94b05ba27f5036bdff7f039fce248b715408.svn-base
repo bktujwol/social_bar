@@ -2,9 +2,9 @@
 /*
 
 Plugin Name: Social Bar
-Plugin URI:
-Description: Social Bar Widget, lets user to follow you or share you post on social media sites
-Version: 2.1.0
+Plugin URI: 
+Description: Social Bar Widget, lets user to follow you or share you post on social media site
+Version: 2.0.0
 Author: Ujwol Bastakoti
 Author URI:https://ujwolbastakoti.wordpress.com/
 License: GPLv2
@@ -14,45 +14,47 @@ License: GPLv2
 
 
 class social_bar extends WP_Widget{
-    public function __construct() {
-        parent::__construct(
-            'social_bar', // Base ID
-            'Social Bar', // Name
-            array( 'description' => __( 'Social Bar,lets user to follow you or share you post on social media site', 'text_domain' ), ) // Args
-            );
-        
-        add_action( 'wp_enqueue_scripts', array($this, 'load_dashicons_front_end') );
-        
-    }
-    
-    //load dashicon
-    public function load_dashicons_front_end() {
-        wp_enqueue_style( 'dashicons' );
-    }
-    
-    public function default_animation($animation,$instance){
-        if(isset($instance['animation']))
-        {
-            if($animation == $instance['animation'])
-            {
-                echo 'selected="selected"';
-            }
-        }
-    }
-    
-    public function form( $instance ) {
-        
-        if ( isset( $instance[ 'title' ] ) ) {
-            
-            $title = $instance[ 'title' ];
-        }
-        else {
-            $title = __( 'Get Social', 'text_domain' );
-        }
-        
-        
-        
-        ?>
+		public function __construct() {
+			parent::__construct(
+					'social_bar', // Base ID
+					'Social Bar', // Name
+					array( 'description' => __( 'Social Bar,lets user to follow you or share you post on social media site', 'text_domain' ), ) // Args
+			);
+			
+			add_action( 'wp_enqueue_scripts', array($this, 'load_dashicons_front_end') );
+			
+		}
+		
+		//load dashicon
+		public function load_dashicons_front_end() {
+		    wp_enqueue_style( 'dashicons' );
+		}
+		
+		public function default_animation($animation,$instance){
+			if(isset($instance['animation']))
+			{
+			   if($animation == $instance['animation'])
+			   {
+			   	 echo 'selected="selected"';
+			   }
+			}
+		}
+		
+		public function form( $instance ) {
+			
+			add_thickbox();//call built in function for thickbox
+			
+			if ( isset( $instance[ 'title' ] ) ) {
+			
+					$title = $instance[ 'title' ];
+				}
+			else {
+					$title = __( 'Get Social', 'text_domain' );
+				}
+				
+				
+				
+				?>
 				<p>
 				<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
 				<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
@@ -66,6 +68,12 @@ class social_bar extends WP_Widget{
 				<label for="<?php echo $this->get_field_id( 'twitter_id' ); ?>"><?php _e( 'Twitter Profile URL:' ); ?></label> 
 				
 				<input class="widefat" id="<?php echo $this->get_field_id( 'twitter_id' ); ?>" name="<?php echo $this->get_field_name( 'twitter_id' ); ?>" type="text" value="<?php if(!empty($instance['twitter_id'])){ echo esc_attr( $instance[ 'twitter_id' ] );} ?>" />
+				<p>
+				
+				<label for="<?php echo $this->get_field_id( 'google_id' ); ?>"><?php _e( 'Google+ Profile URL :' ); ?></label> 
+				
+				<input class="widefat" id="<?php echo $this->get_field_id( 'google_id' ); ?>" name="<?php echo $this->get_field_name( 'google_id' ); ?>" type="text" value="<?php if(!empty($instance['google_id'])){ echo esc_attr( $instance[ 'google_id'] ); }?>" />
+				</p>
 				<p>
 				<label for="<?php echo $this->get_field_id( 'linkedin_id' ); ?>"><?php _e( 'Linkedin Profile URL:' ); ?></label> 
 				
@@ -198,6 +206,25 @@ class social_bar extends WP_Widget{
 							</div>
 						</div>
 					</li>
+					<?php }
+					
+					if(!empty($instance['google_id'])) {?>
+					<li>
+						<div class="ctcSocialbarWidgetChItem">				
+							<div class="ctcSocialbarWidgetChInfo ctcSocialbarWidgetChInfoGplus">
+								<div class="ctcSocialbarWidgetChInfoFront ctcSocialbarWidgetChGplus"></div>
+								<div class="ctcSocialbarWidgetChInfoBack ctcSocialbarWidgetChInfoBackGplus" >
+									<p class="ctcSocialbarWidgetTooltipP"  id="ctcSocialbarWidgetGplusTooltip" >
+									<a class="ctcSocialbarWidgetGplusTooltip dashicons-before dashicons-share" style="color:rgba(255,255,255, 1);"  href="https://plus.google.com/share?url=<?=the_permalink()?>"  target="_blank" title="Share it on Google+"></a>
+									
+									
+									<a class="ctcSocialbarWidgetGplusTooltip dashicons-before dashicons-admin-users" style="color:rgba(255,255,255, 1);"  href="<?=esc_attr( $instance[ 'google_id' ])?>"  target="_blank" title="Visit Google Plus profile"></a>
+										</p>
+								</div>	
+							</div>
+						</div>
+					</li>
+					
 					<?php }
 					if(!empty($instance['pinterest_id'])) {?>
 					<li>
