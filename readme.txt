@@ -2,8 +2,8 @@
 Contributors: ujw0l
 Tags: Social, Media,Social Networking, Widget,share, Facebook, Twitter, LinkedIn,Follow, ,share post
 Requires at least: 2.8	+
-Tested up to: 5.1.1
-Stable tag: 2.1.0
+Tested up to: 5.2
+Stable tag: 2.1.1
 License: GPLv2
 
 Plugin to display Facebook, Twitter, Pinterest,Google Plus and LinkedIn as widget	on sidebar or footer, where vistor can share page as well as visit you social media profile  . 
@@ -100,5 +100,10 @@ Just leave the URL field/s empty and particular social media icon/s will not dis
 
 = 2.1.0 =
 *Google removed
+
+=2.1.1=
+*Bug fixes
+*Dashicon removed from header
+*Styling changes
  
 
