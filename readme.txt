@@ -3,7 +3,7 @@ Contributors: ujw0l
 Tags: Social, Media,Social Networking, Widget,share, Facebook, Twitter, LinkedIn,Follow, ,share post
 Requires at least: 2.8	+
 Tested up to: 5.5
-Stable tag: 2.1.1
+Stable tag: 2.1.2
 License: GPLv2
 
 Plugin to display Facebook, Twitter, Pinterest,Google Plus and LinkedIn as widget	on sidebar or footer, where vistor can share page as well as visit you social media profile  . 
