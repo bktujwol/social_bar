@@ -2,11 +2,11 @@
 /*
 
 Plugin Name: Social Bar
-Plugin URI:
+Plugin URI:https://github.com/ujw0l/social_bar
 Description: Social Bar Widget, lets user to follow you or share you post on social media sites
 Version: 2.1.1
 Author: Ujwol Bastakoti
-Author URI:https://ujwolbastakoti.wordpress.com/
+Author URI:ujw0l.github.io
 text_domain :social-bar
 License: GPLv2
 

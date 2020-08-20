@@ -2,7 +2,7 @@
 Contributors: ujw0l
 Tags: Social, Media,Social Networking, Widget,share, Facebook, Twitter, LinkedIn,Follow, ,share post
 Requires at least: 2.8	+
-Tested up to: 5.2
+Tested up to: 5.5
 Stable tag: 2.1.1
 License: GPLv2
 
@@ -15,10 +15,6 @@ Plugin lets you to display Facebook, Twitter,Pinterest and LinkedIn on as widget
 
 It is very light weight and doesn't use any javascript codes, just gives user options to Follow Share using Endpoint, no API key needed.
 
-
-
-Note: 
-    
 
 == Installation ==
 
@@ -57,7 +53,7 @@ Just leave the URL field/s empty and particular social media icon/s will not dis
 == Screenshots ==
 
 1.	Screenshot of the front end 
-2.	Screen shot of Backend 
+2.	Screenshot of Backend 
 
 
 == Changelog ==
