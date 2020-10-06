@@ -225,11 +225,11 @@
 }
 
 .ctcSocialbarWidgetChPinterest::before {
-    font-family: cursive;
+    font-family: dashicons;
     text-align: center;
     color: white !important;
     font-size: 28px;
-    content: "\P";
+    content: "\f192";
     font-weight: bold;
 }
 
