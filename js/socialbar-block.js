@@ -7,38 +7,6 @@ const el = wp.element.createElement;
 const useState = wp.element.useState;
 
 
-
-const DisplayBar = props => {
-    const postPermaLink = useSelect(select => select("core/editor").getPermalink());
-    const options = props.options.attributes.socialOptions
-        ;
-    const [socialSharing, setSocialSharing] = useState(options);
-
-    return el('section', { className: "sbgSocialbarMain" },
-        el('ol', { className: 'sbgSocialbarChGrid' },
-            options.map(x => {
-                return el('li', {},
-                    el('div', { className: 'sbgSocialbarChItem' },
-                        el('div', { className: `sbgSocialbarChInfo sbgSocialbarChInfo${x.name}` },
-                            el('div', { className: `sbgSocialbarChInfoFront sbgSocialbarCh${x.name}` }, ''),
-                            el('div', { className: `sbgSocialbarChInfoBack sbgSocialbarChInfoBack${x.name}` }, ''),
-                            el('p', { className: `sbgSocialbarTooltipP`, 'id': `sbgSocialbar${x.name}Tooltip` },
-                                el('a', { className: `sbgSocialbar${x.name}Tooltip `, 'href': `${x.href}${postPermaLink}`, 'target': "_blank", 'title': `title="Share this page on ${x.name}"` }))
-                        )));
-            })
-
-        ),
-
-        el(InspectorControls, null,
-            el(PanelBody, null,
-                el('input', { 'type': "checkbox", 'id': "checkbox" },),
-                el('lable', { 'label-for': 'checkbox' }, "Checkbox")
-            )));
-
-}
-
-
-
 wp.blocks.registerBlockType('social-bar/socialbar-block', {
     title: __("Social Sharing", 'social-bar'),
     icon: 'share',
@@ -56,9 +24,79 @@ wp.blocks.registerBlockType('social-bar/socialbar-block', {
                 { name: "Pinterest", href: "http://pinterest.com/pin/create/link/?url=" }
             ]
         },
+        socialOptionsInput: {
+            type: 'array',
+            default: [
+                { name: 'Facebook', href: 'https://www.facebook.com/sharer/sharer.php?u=' },
+                { name: "Twitter", href: 'http://twitter.com/share?url=' },
+                { name: 'Linkedin', href: 'http://www.linkedin.com/cws/share?url=' },
+                { name: "Pinterest", href: "http://pinterest.com/pin/create/link/?url=" }
+            ]
+        },
+        postPermalink: {
+            type: 'string',
+            default: ''
+        }
     },
 
 
-    edit: props => el(DisplayBar, { options: props },),
-    save: props => { console.log() }
+    edit: props => {
+        const postPermaLink = useSelect(select => select("core/editor").getPermalink());
+
+        props.setAttributes({ postPermalink: postPermaLink })
+
+        return el('section', { className: "sbgSocialbarMain" },
+            el('ol', { className: 'sbgSocialbarChGrid' },
+                props.attributes.socialOptions.map(x => {
+                    return el('li', {},
+                        el('div', { className: 'sbgSocialbarChItem' },
+                            el('div', { className: `sbgSocialbarChInfo sbgSocialbarChInfo${x.name}` },
+                                el('div', { className: `sbgSocialbarChInfoFront sbgSocialbarCh${x.name}` }, ''),
+                                el('div', { className: `sbgSocialbarChInfoBack sbgSocialbarChInfoBack${x.name}` }, ''),
+                            )));
+                })
+
+            ),
+
+            el(InspectorControls, null,
+                el(PanelBody, null,
+                    props.attributes.socialOptionsInput.map(x => el('div', { 'id': 'sbg-social-sharing' },
+                        el('input', {
+                            onChange: e => {
+
+                                if (!e.target.checked) {
+                                    let setSocialSharing = props.attributes.socialOptionsInput.filter(x => true === document.querySelector(`#${x.name}-sbg`).checked)
+                                    props.setAttributes({ socialOptions: setSocialSharing });
+                                } else {
+                                    let setSocialSharing = props.attributes.socialOptionsInput.filter(x => false !== document.querySelector(`#${x.name}-sbg`).checked)
+                                    props.setAttributes({ socialOptions: setSocialSharing });
+                                }
+
+                            }, 'type': 'checkbox', 'id': `${x.name}-sbg`, 'data-type': x.name
+                        }),
+                        el('lable', { 'label-for': `${x.name}-sbg` }, x.name)
+                    )
+                    )
+
+                )));
+
+
+    },
+    save: props => {
+
+        return el('section', { className: "sbgfSocialbarMain" },
+            el('ol', { className: 'sbgfSocialbarChGrid' },
+                props.attributes.socialOptions.map(x => {
+                    return el('li', {},
+                        el('div', { className: 'sbgfSocialbarChItem' },
+                            el('div', { className: `sbgfSocialbarChInfo sbgfSocialbarChInfo${x.name}` },
+                                el('div', { className: `sbgfSocialbarChInfoFront sbgfSocialbarCh${x.name}` }, ''),
+                                el('div', { className: `sbgfSocialbarChInfoBack sbgfSocialbarChInfoBack${x.name}` }, ''),
+                                el('p', { className: `sbgfSocialbarTooltipP`, 'id': `sbgfSocialbar${x.name}Tooltip` },
+                                    el('a', { className: `sbgfSocialbar${x.name}Tooltip `, 'href': `${x.href}${props.attributes.postPermalink}`, 'target': "_blank", 'title': `title="Share this page on ${x.name}"` }))
+                            )));
+                })
+
+            ))
+    }
 });

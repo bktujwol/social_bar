@@ -334,3 +334,295 @@
     color: white !important;
 
 }
+
+
+/*styling for socialbar sharing*/
+
+.sbgfSocialbarMain{
+    height:100px; 
+  }
+  .sbgfSocialbarMain a{
+      
+      text-decoration:none;
+  }
+  .sbgfSocialbarChItem {
+      position: relative;
+      cursor: default;
+  }
+  
+  .sbgfProductPageSocialBar:hover .sbgfSocialbarChInfoFront::before{
+      -webkit-transform: scale(2);
+      -moz-transform: scale(2);
+      -o-transform: scale(2);
+      -ms-transform: scale(2);
+      transform: scale(2);
+      
+      -webkit-transition: all 0.4s ease-in-out 0.2s;
+      -moz-transition: all 0.4s ease-in-out 0.2s;
+      -o-transition: all 0.4s ease-in-out 0.2s;
+      -ms-transition: all 0.4s ease-in-out 0.2s;
+      transition: all 0.4s ease-in-out 0.2s;
+      
+       text-shadow: 8px 8px 12px  rgba(0,0,0,0.9);
+      
+  }
+  
+  
+  .sbgfProductPageSocialBar .sbgfSocialbarChInfoFront::before{
+      
+      -webkit-transform: scale(2);
+      -moz-transform: scale(2);
+      -o-transform: scale(2);
+      -ms-transform: scale(2);
+      transform: scale(2);
+      
+      -webkit-transition: all 0.4s ease-in-out 0.2s;
+      -moz-transition: all 0.4s ease-in-out 0.2s;
+      -o-transition: all 0.4s ease-in-out 0.2s;
+      -ms-transition: all 0.4s ease-in-out 0.2s;
+      transition: all 0.4s ease-in-out 0.2s;
+  }
+  
+  .sbgfSocialbarChInfoWrap,
+  .sbgfSocialbarChInfo{
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+  
+  }
+  .sbgfSocialbarChInfoWrap {
+      top: 25px;
+      left: 35px;
+      
+      box-shadow: 
+          0 0 0 20px rgba(255,255,255,0.2), 
+          inset 0 0 3px rgba(115,114, 23, 0.8);
+  
+  }
+  
+  .sbgfSocialbarChInfo > div {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 100%;
+      background-position: center center;
+   
+      border: 3px solid rgb(255,255,255,1);
+  }
+      
+  
+  
+  .sbgfSocialbarChInfo .sbgfSocialbarChInfoFront {
+      -webkit-transition: all 0.6s ease-in-out;
+      -moz-transition: all 0.6s ease-in-out;
+      -o-transition: all 0.6s ease-in-out;
+      -ms-transition: all 0.6s ease-in-out;
+      transition: all 0.6s ease-in-out;
+  }
+  
+  
+  
+  .sbgfSocialbarChInfoFacebook .sbgfSocialbarChInfoBackFacebook {
+      background: rgba(0,84,159,0.8);
+  }
+  
+  .sbgfSocialbarChInfoTwitter .sbgfSocialbarChInfoBackTwitter {
+      background: rgba(56,205,255,0.8);
+  }
+  
+  .sbgfSocialbarChInfoLinkedin .sbgfSocialbarChInfoBackLinkedin {
+     
+      
+      background: rgba(0,150,193,0.8);
+    
+  }
+  
+  .sbgfSocialbarChInfoPinterest .sbgfSocialbarChInfoBackPinterest {
+  
+     background: rgba(189,8,28,0.8); 
+   
+  }
+  
+  
+  
+  .sbgfSocialbarChInfoFacebook .sbgfSocialbarChInfoBackFacebook,
+  .sbgfSocialbarChInfoTwitter .sbgfSocialbarChInfoBackTwitter,
+  .sbgfSocialbarChInfoLinkedin .sbgfSocialbarChInfoBackLinkedin,
+  .sbgfSocialbarChInfoPinterest .sbgfSocialbarChInfoBackPinterest,
+  .sbgfSocialbarChInfoTumblr .sbgfSocialbarChInfoBackTumblr{
+       
+        pointer-events: none;
+    opacity:0;
+   -webkit-transform: scale(2);
+      -moz-transform: scale(2);
+      -o-transform: scale(2);
+      -ms-transform: scale(2);
+      transform: scale(2);
+      
+      -webkit-transition: all 0.4s ease-in-out 0.2s;
+      -moz-transition: all 0.4s ease-in-out 0.2s;
+      -o-transition: all 0.4s ease-in-out 0.2s;
+      -ms-transition: all 0.4s ease-in-out 0.2s;
+      transition: all 0.4s ease-in-out 0.2s;
+  
+  }
+  
+  .sbgfSocialbarChInfoFacebook .sbgfSocialbarChInfoBackFacebook:hover,
+  .sbgfSocialbarChInfoTwitter .sbgfSocialbarChInfoBackTwitter:hover,
+  .sbgfSocialbarChInfoLinkedin .sbgfSocialbarChInfoBackLinkedin:hover,
+  .sbgfSocialbarChInfoPinterest .sbgfSocialbarChInfoBackPinterest:hover,
+  .sbgfSocialbarChInfoTumblr .sbgfSocialbarChInfoBackTumblr:hover{
+      width:100%;
+      
+      
+  }
+  
+  
+  
+  .sbgfSocialbarChFacebook { 
+         
+     background: rgba(0,84,159,0.8);
+     
+  }
+  
+  .sbgfSocialbarChTwitter { 
+      
+  
+      background: rgba(56,205,255,0.8);
+     
+  }
+  
+  .sbgfSocialbarChLinkedin{
+      
+      background: rgba(0,150,193,0.8); 
+      
+  }
+  .sbgfSocialbarChPinterest{  
+      background: rgba(189,8,28,0.8); 
+      
+  }
+  
+  
+  
+  .sbgfSocialbarChLinkedin::before{
+      text-align:center;
+     font-size:27px;
+     color:white;
+      font-family: dashicons;
+    content: "\f18d";
+      font-weight:normal;
+       text-shadow: 2px 2px 3px  rgba(0,0,0,1);
+       
+  }
+  .sbgfSocialbarChTwitter::before{
+      text-align:center;
+     font-size:27px;
+     color:white;
+      font-family: dashicons;
+      content: "\f301";
+       font-weight:normal;
+        text-shadow: 2px 2px 3px  rgba(0,0,0,1);
+  }
+  .sbgfSocialbarChFacebook::before{
+     text-align:center;
+     font-size:27px;
+     color:white;
+     font-family: dashicons;
+     content: "\f305";
+     font-weight:normal;
+     text-shadow: 2px 2px 3px  rgba(0,0,0,1);
+     
+     
+  }
+  .sbgfSocialbarChPinterest::before{
+    font-family: dashicons;
+     text-align:center;
+     font-size:28px;
+     color:white;
+     content: "\f192";
+     font-weight:bold;
+     text-shadow: 2px 2px 3px  rgba(0,0,0,1);  
+  }
+  
+  
+  
+  
+  .sbgfSocialbarChInfo p {
+     
+      color: #fff;
+      width:100%;
+      height:100%;
+  }
+  
+  .sbgfSocialbarChInfo p a {
+     
+      color: white;
+      text-shadow: 8px 8px 12px  rgba(0,0,0,0.8);
+  
+  }
+  .sbgfSocialbarChInfo p a:before {
+      font-family: dashicons;
+      color: white;
+      text-shadow: 8px 8px 12px  rgba(0,0,0,0.8);
+      content: "\f237";
+  font-size:25px;
+  }
+  
+  .sbgfSocialbarChInfo p a:hover {
+      color: #fff;
+      text-align:center;   
+  }
+  
+  .sbgfSocialbarChItem:hover .sbgfSocialbarChInfoFront {
+      -webkit-transform: scale(0);
+      -moz-transform: scale(0);
+      -o-transform: scale(0);
+      -ms-transform: scale(0);
+      transform: scale(0);
+      opacity: 0;
+       transition: 0.5s ease;
+    -webkit-transition: 0.5s ease;
+    -moz-transition: 0.5s ease;
+  } 
+  
+  .sbgfSocialbarChItem:hover .sbgfSocialbarChInfoBack {
+      text-align:center !important;
+      -webkit-transform: scale(1);
+      -moz-transform: scale(1);
+      -o-transform: scale(1);
+      -ms-transform: scale(1);
+      transform: scale(1);
+      opacity: 1;
+      pointer-events: auto;
+       transition: 0.5s ease;
+    -webkit-transition: 0.5s ease;
+    -moz-transition: 0.5s ease;
+  
+  }
+  
+  
+  
+  .sbgfSocialbarChGrid {
+      height:95px;
+      list-style:none!important;
+      display: block;
+      text-align: center;
+  margin-left:0px;
+  }
+  
+  .sbgfSocialbarChGrid:after {
+      clear: both;
+  }
+  
+  .sbgfSocialbarChGrid li {
+      list-style:none !important;
+      display: inline-block;
+      
+  }
+  .sbgfSocialbarTooltipP{
+      font-size: inherit; 
+      line-height: inherit;
+      margin-top: 0px;
+      margin-bottom: 0px;
+  }
+  
