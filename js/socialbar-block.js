@@ -1,5 +1,5 @@
 
-const { PanelBody } = wp.components;
+const { CheckboxControl, PanelBody } = wp.components;
 const { InspectorControls } = wp.blockEditor;
 const { useSelect } = wp.data;
 const __ = wp.i18n.__;
@@ -42,7 +42,6 @@ wp.blocks.registerBlockType('social-bar/socialbar-block', {
 
     edit: props => {
         const postPermaLink = useSelect(select => select("core/editor").getPermalink());
-
         props.setAttributes({ postPermalink: postPermaLink })
 
         return el('section', { className: "sbgSocialbarMain" },
@@ -60,11 +59,14 @@ wp.blocks.registerBlockType('social-bar/socialbar-block', {
 
             el(InspectorControls, null,
                 el(PanelBody, null,
-                    props.attributes.socialOptionsInput.map(x => el('div', { 'id': 'sbg-social-sharing' },
-                        el('input', {
-                            onChange: e => {
+                    props.attributes.socialOptionsInput.map((x, i) => el('div', { 'id': 'sbg-social-sharing' },
+                        el(CheckboxControl, {
+                            label: x.name,
+                            'id': `${x.name}-sbg`,
+                            'data-type': x.name,
+                            onChange: checked => {
 
-                                if (!e.target.checked) {
+                                if (!checked) {
                                     let setSocialSharing = props.attributes.socialOptionsInput.filter(x => true === document.querySelector(`#${x.name}-sbg`).checked)
                                     props.setAttributes({ socialOptions: setSocialSharing });
                                 } else {
@@ -72,9 +74,9 @@ wp.blocks.registerBlockType('social-bar/socialbar-block', {
                                     props.setAttributes({ socialOptions: setSocialSharing });
                                 }
 
-                            }, 'type': 'checkbox', 'id': `${x.name}-sbg`, 'data-type': x.name
+                            },
                         }),
-                        el('lable', { 'label-for': `${x.name}-sbg` }, x.name)
+                        // el('lable', { 'label-for': `${x.name}-sbg` }, x.name)
                     )
                     )
 
@@ -84,7 +86,7 @@ wp.blocks.registerBlockType('social-bar/socialbar-block', {
     },
     save: props => {
 
-        return el('section', { className: "sbgfSocialbarMain" },
+        return el('div', null, el('section', { className: "sbgfSocialbarMain" },
             el('ol', { className: 'sbgfSocialbarChGrid' },
                 props.attributes.socialOptions.map(x => {
                     return el('li', {},
@@ -93,10 +95,10 @@ wp.blocks.registerBlockType('social-bar/socialbar-block', {
                                 el('div', { className: `sbgfSocialbarChInfoFront sbgfSocialbarCh${x.name}` }, ''),
                                 el('div', { className: `sbgfSocialbarChInfoBack sbgfSocialbarChInfoBack${x.name}` }, ''),
                                 el('p', { className: `sbgfSocialbarTooltipP`, 'id': `sbgfSocialbar${x.name}Tooltip` },
-                                    el('a', { className: `sbgfSocialbar${x.name}Tooltip `, 'href': `${x.href}${props.attributes.postPermalink}`, 'target': "_blank", 'title': `title="Share this page on ${x.name}"` }))
+                                    el('a', { className: `sbgfSocialbar${x.name}Tooltip `, 'href': `${x.href}${props.attributes.postPermalink}`, 'target': "_blank", 'title': `Share this page on ${x.name}` }))
                             )));
                 })
 
-            ))
+            )))
     }
 });
