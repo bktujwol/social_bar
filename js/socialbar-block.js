@@ -2,15 +2,13 @@
 const { CheckboxControl, PanelBody, __experimentalLinkControl } = wp.components;
 const { InspectorControls } = wp.blockEditor;
 const { useSelect } = wp.data;
-const __ = wp.i18n.__;
+const { __ } = wp.i18n;
 const el = wp.element.createElement;
-const useState = wp.element.useState;
-
 
 wp.blocks.registerBlockType('social-bar/socialbar-block', {
     title: __("Social Sharing", 'social-bar'),
     icon: 'share',
-    description: __("Social sharing gutenberg block", "social-bar"),
+    description: __("Social sharing block", "social-bar"),
     category: 'common',
     keywords: [__('Social Bar', 'social-bar'), __('Social Sharing', 'social-bar')],
     example: {},
