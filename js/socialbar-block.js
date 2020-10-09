@@ -1,5 +1,5 @@
 
-const { CheckboxControl, PanelBody } = wp.components;
+const { CheckboxControl, PanelBody, __experimentalLinkControl } = wp.components;
 const { InspectorControls } = wp.blockEditor;
 const { useSelect } = wp.data;
 const __ = wp.i18n.__;
@@ -53,7 +53,7 @@ wp.blocks.registerBlockType('social-bar/socialbar-block', {
                                 el('div', { className: `sbgSocialbarChInfoFront sbgSocialbarCh${x.name}` }, ''),
                                 el('div', { className: `sbgSocialbarChInfoBack sbgSocialbarChInfoBack${x.name}` }, ''),
                                 el('p', { className: `sbgSocialbarTooltipP`, id: `sbgSocialbar${x.name}Tooltip` },
-                                    el('a', { className: `sbgSocialbar${x.name}Tooltip`, 'href': `${x.href}${props.attributes.postPermalink}`, 'target': "_blank", 'title': `Share this page on ${x.name}` }))
+                                    el('a', { className: `sbgSocialbar${x.name}Tooltip`, 'href': `${x.href}${props.attributes.postPermalink}`, 'target': "_blank", 'title': `Share this page on ${x.name}` }, ''))
                             )));
                 })
 
@@ -63,6 +63,7 @@ wp.blocks.registerBlockType('social-bar/socialbar-block', {
                 el(PanelBody, null,
                     props.attributes.socialOptionsInput.map((x, i) => el('div', { 'id': 'sbg-social-sharing' },
                         el(CheckboxControl, {
+                            name: x.name,
                             label: x.name,
                             'id': `${x.name}-sbg`,
                             'data-type': x.name,
@@ -84,19 +85,22 @@ wp.blocks.registerBlockType('social-bar/socialbar-block', {
     },
     save: props => {
 
-        return el('div', null, el('section', { className: "sbgfSocialbarMain" },
-            el('ol', { className: 'sbgfSocialbarChGrid' },
-                props.attributes.socialOptions.map(x => {
-                    return el('li', null,
-                        el('div', { className: 'sbgfSocialbarChItem' },
-                            el('div', { className: `sbgfSocialbarChInfo sbgfSocialbarChInfo${x.name}` },
-                                el('div', { className: `sbgfSocialbarChInfoFront sbgfSocialbarCh${x.name}` }, ''),
-                                el('div', { className: `sbgfSocialbarChInfoBack sbgfSocialbarChInfoBack${x.name}` }, ''),
-                                el('p', { className: `sbgfSocialbarTooltipP`, id: `sbgfSocialbar${x.name}Tooltip` },
-                                    el('a', { className: `sbgfSocialbar${x.name}Tooltip`, 'href': `${x.href}${props.attributes.postPermalink}`, 'target': "_blank", 'title': `Share this page on ${x.name}` }))
-                            )));
-                })
+        return (
+            el('div', null, el('section', { className: "sbgfSocialbarMain" },
+                el('ol', { className: 'sbgfSocialbarChGrid' },
+                    props.attributes.socialOptions.map(x => {
+                        return el('li', null,
+                            el('div', { className: 'sbgfSocialbarChItem' },
+                                el('div', { className: `sbgfSocialbarChInfo sbgfSocialbarChInfo${x.name}` },
+                                    el('div', { className: `sbgfSocialbarChInfoFront sbgfSocialbarCh${x.name}` }, ''),
+                                    el('div', { className: `sbgfSocialbarChInfoBack sbgfSocialbarChInfoBack${x.name}` }, ''),
+                                    el('p', { className: `sbgfSocialbarTooltipP`, id: `sbgfSocialbar${x.name}Tooltip` },
+                                        el('a', { className: `sbgfSocialbar${x.name}Tooltip`, 'href': `${x.href}${props.attributes.postPermalink}`, 'target': "_blank", 'title': `Share this page on ${x.name}`, 'rel': 'noopener noreferrer' }, ''))
+                                )));
+                    })
 
-            )))
+                )))
+
+        );
     }
 });
