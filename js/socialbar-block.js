@@ -1,5 +1,5 @@
 
-const { CheckboxControl, PanelBody, __experimentalLinkControl } = wp.components;
+const { CheckboxControl, PanelBody } = wp.components;
 const { InspectorControls } = wp.blockEditor;
 const { useSelect } = wp.data;
 const { __ } = wp.i18n;
