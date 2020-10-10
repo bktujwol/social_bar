@@ -51,7 +51,9 @@
     visibility: visible !important;
     border-radius: 100%;
 }
-
+p.sbgSocialbarTooltipP{
+    text-decoration:none!important;
+}
 
 /*styling for */
 
@@ -292,8 +294,6 @@
     transform: scale(1);
     pointer-events: auto;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-    box-shadow: 2px 1px rgba(0, 0, 0, 0.5);
-
     -webkit-transition: all 0.5s ease-in-out 0.3s;
     -moz-transition: all 0.5s ease-in-out 0.3s;
     -o-transition: all 0.5s ease-in-out 0.3s;
@@ -331,6 +331,9 @@
     display: inline-block;
     color: rgba(255,255,255,1) !important;
     margin:2px!important;
+    float:left;
+    text-decoration: none!important;
+    border:0px;
 
 }
 .sbgSocialbarChInfo p a{
@@ -340,11 +343,8 @@
 .sbgSocialbarChInfo p a:before {
     font-family: dashicons;
     color: rgba(255,255,255,1);
-    text-shadow: 8px 8px 12px  rgba(133, 91, 91, 1);
     content: "\f237";
     font-size:32px;
-   
-   
     width: 55px;
     height: 55x;
     padding:5px;

@@ -4,8 +4,9 @@ const { InspectorControls } = wp.blockEditor;
 const { useSelect } = wp.data;
 const { __ } = wp.i18n;
 const el = wp.element.createElement;
+const { registerBlockType } = wp.blocks;
 
-wp.blocks.registerBlockType('social-bar/socialbar-block', {
+registerBlockType('social-bar/socialbar-block', {
     title: __("Social Sharing", 'social-bar'),
     icon: 'share',
     description: __("Social sharing block", "social-bar"),
@@ -25,10 +26,10 @@ wp.blocks.registerBlockType('social-bar/socialbar-block', {
         socialOptionsInput: {
             type: 'array',
             default: [
-                { name: 'Facebook', href: 'https://www.facebook.com/sharer/sharer.php?u=' },
-                { name: "Twitter", href: 'http://twitter.com/share?url=' },
-                { name: 'Linkedin', href: 'http://www.linkedin.com/cws/share?url=' },
-                { name: "Pinterest", href: "http://pinterest.com/pin/create/link/?url=" }
+                { name: 'Facebook', href: 'https://www.facebook.com/sharer/sharer.php?u=', checked: true },
+                { name: "Twitter", href: 'http://twitter.com/share?url=', checked: true },
+                { name: 'Linkedin', href: 'http://www.linkedin.com/cws/share?url=', checked: true },
+                { name: "Pinterest", href: "http://pinterest.com/pin/create/link/?url=", checked: true }
             ]
         },
         postPermalink: {
@@ -63,17 +64,16 @@ wp.blocks.registerBlockType('social-bar/socialbar-block', {
                         el(CheckboxControl, {
                             name: x.name,
                             label: x.name,
+                            checked: x.checked,
                             'id': `${x.name}-sbg`,
                             'data-type': x.name,
                             onChange: checked => {
                                 if (!checked) {
-                                    let setSocialSharing = props.attributes.socialOptionsInput.filter(x => true === document.querySelector(`#${x.name}-sbg`).checked)
-                                    props.setAttributes({ socialOptions: setSocialSharing });
+                                    props.setAttributes({ socialOptions: props.attributes.socialOptionsInput.filter(x => true === document.querySelector(`#${x.name}-sbg`).checked) });
                                 } else {
-                                    let setSocialSharing = props.attributes.socialOptionsInput.filter(x => false !== document.querySelector(`#${x.name}-sbg`).checked)
-                                    props.setAttributes({ socialOptions: setSocialSharing });
+                                    props.setAttributes({ socialOptions: props.attributes.socialOptionsInput.filter(x => false !== document.querySelector(`#${x.name}-sbg`).checked) });
                                 }
-
+                                props.setAttributes({ socialOptionsInput: props.attributes.socialOptionsInput.map(x => { return { name: x.name, href: x.href, checked: document.querySelector(`#${x.name}-sbg`).checked } }) });
                             },
                         }),
                     )
