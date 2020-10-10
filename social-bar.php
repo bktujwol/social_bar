@@ -257,7 +257,7 @@ wp_register_script(
  );
 
 register_block_type(
-   'take-pic/take-pic-block',
+   'social-bar/socialbar-block',
    array(
 	  'style'         => 'socialbar-block-front-end-styles',
 	  'editor_style'  => 'socialbar-block-editor-styles',
