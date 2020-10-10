@@ -52,8 +52,9 @@ Just leave the URL field/s empty and particular social media icon/s will not dis
 
 == Screenshots ==
 
-1.	Screenshot of the front end 
-2.	Screenshot of Backend 
+1. Screenshot of the front end 
+2. Screenshot of Backend 
+3. Screenshot Gutenberg block
 
 
 == Changelog ==
@@ -108,7 +109,7 @@ Just leave the URL field/s empty and particular social media icon/s will not dis
 =2.1.3=
 *Dashicon for pinterest
  
-=2.1.3=
+=3.0.0=
 *Post sharing options with block
 *Gutenberg block added
 *Styling changes

@@ -3,7 +3,7 @@
 
 Plugin Name: Social Bar
 Plugin URI:https://github.com/ujw0l/social_bar
-Description: Social Bar Widget, lets user to follow you or share you post on social media sites
+Description: Social Bar Widget, lets users to follow you or share post on social media sites
 Version: 3.0.0
 Author: Ujwol Bastakoti
 Author URI:ujw0l.github.io
@@ -27,7 +27,7 @@ class social_bar extends WP_Widget{
     }
     
     /**
-	 * load dashicon
+	 * load dashicons
 	 */
     public function load_dashicons_front_end() {
         wp_enqueue_style( 'dashicons' );

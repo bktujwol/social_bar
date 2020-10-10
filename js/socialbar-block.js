@@ -59,7 +59,6 @@ registerBlockType('social-bar/socialbar-block', {
                 })
 
             ),
-
             el(InspectorControls, null,
                 el(PanelBody, null,
                     props.attributes.socialOptionsInput.map((x, i) => el('div', { 'id': 'sbg-social-sharing' },
@@ -79,7 +78,6 @@ registerBlockType('social-bar/socialbar-block', {
                 ))));
     },
     save: props => {
-
         return (
             el('div', null, el('section', { className: "sbgfSocialbarMain" },
                 el('ol', { className: 'sbgfSocialbarChGrid' },
