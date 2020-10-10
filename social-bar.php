@@ -3,8 +3,8 @@
 
 Plugin Name: Social Bar
 Plugin URI:https://github.com/ujw0l/social_bar
-Description: Social Bar Widget, lets user to follow you or share you post on social media sites
-Version: 2.1.2
+Description: Social Bar Widget, lets users to follow you or share post on social media sites
+Version: 3.0.0
 Author: Ujwol Bastakoti
 Author URI:ujw0l.github.io
 text_domain :social-bar
@@ -26,12 +26,17 @@ class social_bar extends WP_Widget{
         
     }
     
-    //load dashicon
+    /**
+	 * load dashicons
+	 */
     public function load_dashicons_front_end() {
         wp_enqueue_style( 'dashicons' );
     }
     
-    
+    /**
+	 * Inherited function form
+	 * @param $instance form Instance
+	 */
     public function form( $instance ) {
         
         if ( isset( $instance[ 'title' ] ) ):
@@ -208,13 +213,59 @@ class social_bar extends WP_Widget{
 			
 			echo $after_widget;
 		}
+
+		
 		
 
 }
-
-//function to register socail bar widget
+/** 
+*register socail bar widget
+*/
 function register_social_bar_widget(){
     register_widget( "social_bar" );
 }
 add_action( 'widgets_init', 'register_social_bar_widget' );
+
+
+
+/**
+ * Resiter gutenberg block
+ */
+function socialBarRegisterBlock(){
+
+
+	// Block Editor Script.
+wp_register_script(
+   'socialbar-block-editor',
+   plugins_url( 'js/socialbar-block.js',__FILE__ ),
+   array( 'wp-blocks', 'wp-element', 'wp-editor', 'wp-components', 'wp-i18n','wp-data' ),
+);
+
+ // Block front end styles.
+ wp_register_style(
+	'socialbar-block-front-end-styles',
+	plugins_url( 'css/style.css',__FILE__ ),
+	array('dashicons')
+
+ );
+
+ // Block editor styles.
+ wp_register_style(
+	'socialbar-block-editor-styles',
+	plugins_url( 'css/editor-style.css',__FILE__ ),
+	array( 'wp-edit-blocks','dashicons' ),
+ );
+
+register_block_type(
+   'social-bar/socialbar-block',
+   array(
+	  'style'         => 'socialbar-block-front-end-styles',
+	  'editor_style'  => 'socialbar-block-editor-styles',
+	  'editor_script' => 'socialbar-block-editor',
+   )
+);
+
+}
+
+add_action( 'init', 'socialBarRegisterBlock' );
 

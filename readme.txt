@@ -1,9 +1,9 @@
 === Social Bar ===
 Contributors: ujw0l
-Tags: Social, Media,Social Networking, Widget,share, Facebook, Twitter, LinkedIn,Follow, ,share post
+Tags: Social Networking, Widget,share, Facebook, Twitter, LinkedIn,Reddit,Follow,share post
 Requires at least: 2.8	+
-Tested up to: 5.5
-Stable tag: 2.1.2
+Tested up to: 5.5.1
+Stable tag: 3.0.0
 License: GPLv2
 
 Plugin to display Facebook, Twitter, Pinterest,Google Plus and LinkedIn as widget	on sidebar or footer, where vistor can share page as well as visit you social media profile  . 
@@ -11,9 +11,9 @@ Plugin to display Facebook, Twitter, Pinterest,Google Plus and LinkedIn as widge
 
 == Description ==
 
-Plugin lets you to display Facebook, Twitter,Pinterest and LinkedIn on as widget on sidebar and with the theme that supports sidebar or Footer
+Plugin lets you to display Facebook, Twitter,Pinterest and LinkedIn on as widget on sidebar and with the theme that supports sidebar or Footer as well a gutenberg block to share post on social networking sites.
 
-It is very light weight and doesn't use any javascript codes, just gives user options to Follow Share using Endpoint, no API key needed.
+It is very light weight , just gives user options to Follow Share using Endpoint, no API key needed.
 
 
 == Installation ==
@@ -52,8 +52,9 @@ Just leave the URL field/s empty and particular social media icon/s will not dis
 
 == Screenshots ==
 
-1.	Screenshot of the front end 
-2.	Screenshot of Backend 
+1. Screenshot of the front end 
+2. Screenshot of Backend 
+3. Screenshot Gutenberg block
 
 
 == Changelog ==
@@ -101,5 +102,15 @@ Just leave the URL field/s empty and particular social media icon/s will not dis
 *Bug fixes
 *Dashicon removed from header
 *Styling changes
- 
 
+=2.1.2=
+*Dashicon for linkedin
+
+=2.1.3=
+*Dashicon for pinterest
+ 
+=3.0.0=
+*Post sharing options with block
+*Gutenberg block added
+*Styling changes
+*Reddit added as option for sharing
