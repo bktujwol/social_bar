@@ -1,5 +1,5 @@
 /*styling for socialbar sharing*/
-
+.sbgSocialbarChEddit::before,
 .sbgSocialbarChFacebook::before,
 .sbgSocialbarChTwitter::before,
 .sbgSocialbarChPinterest::before,
@@ -11,6 +11,7 @@
     transition: all 0.4s ease-in-out 0.2s;
 }
 
+.sbgSocialbarChInfoReddit .sbgSocialbarChInfoBackReddit div.sbgSocialbarTooltipP a:hover::before,
 .sbgSocialbarChInfoPinterest .sbgSocialbarChInfoBackPinterest div.sbgSocialbarTooltipP a:hover::before,
 .sbgSocialbarChInfoFacebook .sbgSocialbarChInfoBackFacebook div.sbgSocialbarTooltipP a:hover::before,
 .sbgSocialbarChInfoTwitter .sbgSocialbarChInfoBackTwitter div.sbgSocialbarTooltipP a:hover::before,
@@ -28,6 +29,7 @@
     transition: all 0.4s ease-in-out 0.2s;
 }
 
+.sbgSocialbarChInfoReddit .sbgSocialbarChInfoBackReddit div.sbgSocialbarTooltipP a::before,
 .sbgSocialbarChInfoPinterest .sbgSocialbarChInfoBackPinterest div.sbgSocialbarTooltipP a::before,
 .sbgSocialbarChInfoFacebook .sbgSocialbarChInfoBackFacebook div.sbgSocialbarTooltipP a::before,
 .sbgSocialbarChInfoTwitter .sbgSocialbarChInfoBackTwitter div.sbgSocialbarTooltipP a::before,
@@ -113,10 +115,49 @@ p.sbgSocialbarTooltipP{
     padding-top: 0px;
 }
 
+
+.sbgSocialbarChInfoReddit .sbgSocialbarChInfoBackReddit {
+    opacity: 0;
+
+    background: rgb(236, 84, 40,1);
+    pointer-events: none;
+
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+
+    -webkit-transition: all 0.4s ease-in-out 0.2s;
+    -moz-transition: all 0.4s ease-in-out 0.2s;
+    -o-transition: all 0.4s ease-in-out 0.2s;
+    -ms-transition: all 0.4s ease-in-out 0.2s;
+    transition: all 0.4s ease-in-out 0.2s;
+}
+
 .sbgSocialbarChInfoFacebook .sbgSocialbarChInfoBackFacebook {
     opacity: 0;
 
     background: rgb(0, 84, 159);
+    pointer-events: none;
+
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+
+    -webkit-transition: all 0.4s ease-in-out 0.2s;
+    -moz-transition: all 0.4s ease-in-out 0.2s;
+    -o-transition: all 0.4s ease-in-out 0.2s;
+    -ms-transition: all 0.4s ease-in-out 0.2s;
+    transition: all 0.4s ease-in-out 0.2s;
+}
+
+.sbgSocialbarChInfoReddit .sbgSocialbarChInfoBackReddit {
+    opacity: 0;
+
+    background: rgb(236, 84, 40);
     pointer-events: none;
 
     -webkit-transform: scale(1.5);
@@ -187,6 +228,11 @@ p.sbgSocialbarTooltipP{
     background-size: 100%;
 }
 
+.sbgSocialbarChReddit {
+    background: rgba(236, 84, 40, 1);
+    background-size: 100%;
+}
+
 .sbgSocialbarChTwitter {
     background: rgba(56, 205, 255, 1);
     background-size: 100%;
@@ -220,6 +266,15 @@ p.sbgSocialbarTooltipP{
     font-family: dashicons;
     font-size: 32px;
     content: "\f305";
+    font-weight: normal;
+}
+
+.sbgSocialbarChReddit::before {
+    text-align: center;
+    color: rgba(255,255,255,1) !important;
+    font-family: dashicons;
+    font-size: 32px;
+    content: "\f195";
     font-weight: normal;
 }
 
@@ -353,6 +408,10 @@ p.sbgSocialbarTooltipP{
 
 #sbgSocialbarFacebookTooltip  a:before{
     background-color: rgba(30,85,154,1);
+}
+
+#sbgSocialbarRedditTooltip  a:before{
+    background-color: rgba(236,84,40,1);
 }
 
 #sbgSocialbarTwitterTooltip  a:before{

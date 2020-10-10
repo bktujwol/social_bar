@@ -20,7 +20,8 @@ registerBlockType('social-bar/socialbar-block', {
                 { name: 'Facebook', href: 'https://www.facebook.com/sharer/sharer.php?u=' },
                 { name: "Twitter", href: 'http://twitter.com/share?url=' },
                 { name: 'Linkedin', href: 'http://www.linkedin.com/cws/share?url=' },
-                { name: "Pinterest", href: "http://pinterest.com/pin/create/link/?url=" }
+                { name: "Pinterest", href: "http://pinterest.com/pin/create/link/?url=" },
+                { name: "Reddit", href: "http://www.reddit.com/submit?url=" }
             ]
         },
         socialOptionsInput: {
@@ -29,7 +30,8 @@ registerBlockType('social-bar/socialbar-block', {
                 { name: 'Facebook', href: 'https://www.facebook.com/sharer/sharer.php?u=', checked: true },
                 { name: "Twitter", href: 'http://twitter.com/share?url=', checked: true },
                 { name: 'Linkedin', href: 'http://www.linkedin.com/cws/share?url=', checked: true },
-                { name: "Pinterest", href: "http://pinterest.com/pin/create/link/?url=", checked: true }
+                { name: "Pinterest", href: "http://pinterest.com/pin/create/link/?url=", checked: true },
+                { name: "Reddit", href: "http://www.reddit.com/submit?url=", checked: true }
             ]
         },
         postPermalink: {
