@@ -67,14 +67,9 @@ registerBlockType('social-bar/socialbar-block', {
                             name: x.name,
                             label: x.name,
                             checked: x.checked,
-                            'id': `${x.name}-sbg`,
-                            'data-type': x.name,
+                            id: `${x.name}-sbg`,
                             onChange: checked => {
-                                if (!checked) {
-                                    props.setAttributes({ socialOptions: props.attributes.socialOptionsInput.filter(x => true === document.querySelector(`#${x.name}-sbg`).checked) });
-                                } else {
-                                    props.setAttributes({ socialOptions: props.attributes.socialOptionsInput.filter(x => false !== document.querySelector(`#${x.name}-sbg`).checked) });
-                                }
+                                props.setAttributes({ socialOptions: props.attributes.socialOptionsInput.filter(x => true === document.querySelector(`#${x.name}-sbg`).checked) });
                                 props.setAttributes({ socialOptionsInput: props.attributes.socialOptionsInput.map(x => { return { name: x.name, href: x.href, checked: document.querySelector(`#${x.name}-sbg`).checked } }) });
                             },
                         }),
