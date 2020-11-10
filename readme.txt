@@ -20,7 +20,7 @@ Checkout out my other projects for WordPress and Javascript
 
 [Plugin](https://profiles.wordpress.org/ujw0l/#content-plugins) - Free plugins
 
-[JS libraries](https://profiles.wordpress.org/ujw0l/#content-plugins) - Free plugins
+[JS libraries](https://profiles.wordpress.org/ujw0l/#content-plugins) - Free JS Libraries
 
 == Installation ==
 
