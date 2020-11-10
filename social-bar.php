@@ -1,15 +1,13 @@
 <?php
 /*
-
 Plugin Name: Social Bar
 Plugin URI:https://github.com/ujw0l/social_bar
 Description: Social Bar Widget, lets users to follow you or share post on social media sites
-Version: 3.0.0
+Version: 3.0.1
 Author: Ujwol Bastakoti
 Author URI:ujw0l.github.io
 text_domain :social-bar
 License: GPLv2
-
 */
 
 
@@ -52,29 +50,29 @@ class social_bar extends WP_Widget{
 				<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 				</p>
 				<p>
-				<label for="<?php echo $this->get_field_id( 'facebook_id' ); ?>"><?php _e( 'Facebook Profile/Page URL:' ); ?></label> 
+				<label for="<?php echo $this->get_field_id( 'facebook_id' ); ?>"><?php _e( 'Facebook Profile/Page URL:' ,'social-bar' ); ?></label> 
 				
 				<input class="widefat" id="<?php echo $this->get_field_id( 'facebook_id' ); ?>" name="<?php echo $this->get_field_name( 'facebook_id' ); ?>" type="text" value="<?php if(!empty( $instance[ 'facebook_id' ])){ echo esc_attr( $instance[ 'facebook_id' ]);} ?>" />
 				</p>
 				<p>
-				<label for="<?php echo $this->get_field_id( 'twitter_id' ); ?>"><?php _e( 'Twitter Profile URL:' ); ?></label> 
+				<label for="<?php echo $this->get_field_id( 'twitter_id' ); ?>"><?php _e( 'Twitter Profile URL:','social-bar' ); ?></label> 
 				
 				<input class="widefat" id="<?php echo $this->get_field_id( 'twitter_id' ); ?>" name="<?php echo $this->get_field_name( 'twitter_id' ); ?>" type="text" value="<?php if(!empty($instance['twitter_id'])){ echo esc_attr( $instance[ 'twitter_id' ] );} ?>" />
 				<p>
-				<label for="<?php echo $this->get_field_id( 'linkedin_id' ); ?>"><?php _e( 'Linkedin Profile URL:' ); ?></label> 
+				<label for="<?php echo $this->get_field_id( 'linkedin_id' ); ?>"><?php _e( 'Linkedin Profile URL:','social-bar' ); ?></label> 
 				
 				<input class="widefat" id="<?php echo $this->get_field_id( 'linkedin_id' ); ?>" name="<?php echo $this->get_field_name( 'linkedin_id' ); ?>" type="text" value="<?php if(!empty($instance['linkedin_id'])){echo esc_attr( $instance[ 'linkedin_id' ] );} ?>" />
 				</p>
 				<p>
-				<label for="<?php echo $this->get_field_id( 'pinterest_id' ); ?>"><?php _e( 'Pinterest Profile URL:' ); ?></label> 
+				<label for="<?php echo $this->get_field_id( 'pinterest_id' ); ?>"><?php _e( 'Pinterest Profile URL:','social-bar' ); ?></label> 
 				
 				<input class="widefat" id="<?php echo $this->get_field_id( 'pinterest_id' ); ?>" name="<?php echo $this->get_field_name( 'pinterest_id' ); ?>" type="text" value="<?php if(!empty($instance['pinterest_id'])){echo esc_attr( $instance[ 'pinterest_id' ] );} ?>" />
 				</p>
 				<ul>
-				<li>Rate Review and Bug Report: <a href="https://wordpress.org/plugins/social-bar/#reviews" target="_blank"><span class="dashicons dashicons-flag"></span></a></li>
-				<li>URL must start with "http//:" or "https//:"</li>
-				<li>If only profile ID provided, it won't work</li>
-				<li>If field/s left empty, Icon will not display</li>
+				<li><?=__('Rate Review and Bug Report:','social-bar')?> <a href="https://wordpress.org/plugins/social-bar/#reviews" target="_blank"><span class="dashicons dashicons-flag"></span></a></li>
+				<li><?=__('URL must start with "http//:" or "https//:"','social-bar')?></li>
+				<li><?=__("If only profile ID provided, it won't work",'social-bar')?></li>
+				<li><?=__("If field/s left empty, Icon will not display",'social-bar')?></li>
 				</ul>
 				
 				
@@ -145,8 +143,8 @@ class social_bar extends WP_Widget{
 								<div class="ctcSocialbarWidgetChInfoFront ctcSocialbarWidgetChFacebook"></div>
 								<div class="ctcSocialbarWidgetChInfoBack ctcSocialbarWidgetChInfoBackFacebook">
 								<div class="ctcSocialbarWidgetTooltipP"  id="ctcSocialbarWidgetFacebookTooltip" >
-									<a class="ctcSocialbarWidgetFacebookTooltip dashicons-before dashicons-share" style="color:rgba(255,255,255, 1);text-decoration:none;" href="https://www.facebook.com/sharer/sharer.php?u=<?=the_permalink()?>"  target="_blank" title="Share this page on Facebook"></a>   
-									<a  class="ctcSocialbarWidgetFacebookTooltip dashicons-before dashicons-admin-users" style="color:rgba(255,255,255, 1);text-decoration:none;" href="<?=esc_attr( $instance[ 'facebook_id' ])?>"  target="_blank" title="Visit Facebook profile"></a>
+									<a class="ctcSocialbarWidgetFacebookTooltip dashicons-before dashicons-share" style="color:rgba(255,255,255, 1);text-decoration:none;" href="https://www.facebook.com/sharer/sharer.php?u=<?=the_permalink()?>"  target="_blank" title="<?=__('Share this page on Facebook','social-bar')?>"></a>   
+									<a  class="ctcSocialbarWidgetFacebookTooltip dashicons-before dashicons-admin-users" style="color:rgba(255,255,255, 1);text-decoration:none;" href="<?=esc_attr( $instance[ 'facebook_id' ])?>"  target="_blank" title="<?=__('Visit Facebook profile','social-bar')?>"></a>
 									</div>
 								 
 								</div>
@@ -164,9 +162,9 @@ class social_bar extends WP_Widget{
 								<div class="ctcSocialbarWidgetChInfoFront ctcSocialbarWidgetChTwitter" ></div>
 								<div class="ctcSocialbarWidgetChInfoBack ctcSocialbarWidgetChInfoBackTwitter">
 								<div class="ctcSocialbarWidgetTooltipP"  id="ctcSocialbarWidgetTwitterTooltip" >
-								<a class="ctcSocialbarWidgetTwitterTooltip dashicons-before dashicons-share" style="color:rgba(255,255,255, 1);text-decoration:none;" href="http://twitter.com/share?url=<?=the_permalink().'&hashtags='.get_bloginfo( 'name' ).','.get_bloginfo('description').'&via='.str_replace('https://twitter.com/', '',esc_attr( $instance[ 'twitter_id' ]))?>"  target="_blank" title="Tweet this page on Twitter"></a>
+								<a class="ctcSocialbarWidgetTwitterTooltip dashicons-before dashicons-share" style="color:rgba(255,255,255, 1);text-decoration:none;" href="http://twitter.com/share?url=<?=the_permalink().'&hashtags='.get_bloginfo( 'name' ).','.get_bloginfo('description').'&via='.str_replace('https://twitter.com/', '',esc_attr( $instance[ 'twitter_id' ]))?>"  target="_blank" title="<?=__('Tweet this page on Twitter','social-bar')?>"></a>
 								
-								 <a class="ctcSocialbarWidgetTwitterTooltip dashicons-before dashicons-admin-users" style="color:rgba(255,255,255, 1);text-decoration:none;"  href="<?=esc_attr( $instance[ 'twitter_id' ])?>" target="_blank" title="Visit Twitter page"></a>
+								 <a class="ctcSocialbarWidgetTwitterTooltip dashicons-before dashicons-admin-users" style="color:rgba(255,255,255, 1);text-decoration:none;"  href="<?=esc_attr( $instance[ 'twitter_id' ])?>" target="_blank" title="<?=__('Visit Twitter page','social-bar')?>"></a>
 								</div>
 								</div>
 							</div>
@@ -182,8 +180,8 @@ class social_bar extends WP_Widget{
 								<div class="ctcSocialbarWidgetChInfoFront ctcSocialbarWidgetChLinkedin"></div>
 								<div class=" ctcSocialbarWidgetChInfoBack ctcSocialbarWidgetChInfoBackLinkedin" >
 								<div class="ctcSocialbarWidgetTooltipP" id ="ctcSocialbarWidgetLinkedinTooltip" >
-									<a class="ctcSocialbarWidgetLinkedinTooltip dashicons-before dashicons-share" style="color:rgba(255,255,255, 1);text-decoration:none;"  href="http://www.linkedin.com/cws/share?url=<?=the_permalink()?>"  target="_blank" title="Share this page on Linkedin"></a> 
-									<a class="ctcSocialbarWidgetLinkedinTooltip dashicons-before dashicons-admin-users" style="color:rgba(255,255,255, 1);text-decoration:none;"  href="<?=esc_attr( $instance[ 'linkedin_id' ])?>"  target="_blank" title="Visit Linkedin Page"></a>
+									<a class="ctcSocialbarWidgetLinkedinTooltip dashicons-before dashicons-share" style="color:rgba(255,255,255, 1);text-decoration:none;"  href="http://www.linkedin.com/cws/share?url=<?=the_permalink()?>"  target="_blank" title="<?=__("Share this page on Linkedin",'social-bar')?>"></a> 
+									<a class="ctcSocialbarWidgetLinkedinTooltip dashicons-before dashicons-admin-users" style="color:rgba(255,255,255, 1);text-decoration:none;"  href="<?=esc_attr( $instance[ 'linkedin_id' ])?>"  target="_blank" title="<?=__('Visit Linkedin Page','social-bar')?>"></a>
 									</div>
 									</div>
 							</div>
@@ -197,8 +195,8 @@ class social_bar extends WP_Widget{
 								<div class="ctcSocialbarWidgetChInfoFront ctcSocialbarWidgetChPinterest"></div>
 								<div class="ctcSocialbarWidgetChInfoBack ctcSocialbarWidgetChInfoBackPinterest" >
 									<div class="ctcSocialbarWidgetTooltipP"  id="ctcSocialbarWidgetPinterestTooltip" >
-									<a class="ctcSocialbarPinterestTooltip dashicons-before dashicons-admin-post" style="color:rgba(255,255,255, 1);text-decoration:none;"  href="http://pinterest.com/pin/create/link/?url=<?=get_permalink()?>"  target="_blank" title="Pin It"></a>
-									<a class="ctcSocialbarWidgetPinterestTooltip dashicons-before dashicons-admin-users" style="color:rgba(255,255,255, 1);text-decoration:none;"  href="<?php echo esc_attr( $instance[ 'pinterest_id' ]);?>"  target="_blank" title="Visit Pinterest profile"></a>
+									<a class="ctcSocialbarPinterestTooltip dashicons-before dashicons-admin-post" style="color:rgba(255,255,255, 1);text-decoration:none;"  href="http://pinterest.com/pin/create/link/?url=<?=get_permalink()?>"  target="_blank" title="<?=__('Pin It','social-bar')?>"></a>
+									<a class="ctcSocialbarWidgetPinterestTooltip dashicons-before dashicons-admin-users" style="color:rgba(255,255,255, 1);text-decoration:none;"  href="<?php echo esc_attr( $instance[ 'pinterest_id' ]);?>"  target="_blank" title="<?=__('Visit Pinterest profile','social-bar')?>"></a>
 									</div>
 								</div>	
 							</div>
