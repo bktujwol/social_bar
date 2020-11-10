@@ -1,9 +1,9 @@
 === Social Bar ===
 Contributors: ujw0l
-Tags: Social Networking, Widget,share, Facebook, Twitter, LinkedIn,Reddit,Follow,share post
+Tags: Social, Widget,share, Facebook, Twitter, LinkedIn,Reddit,Follow,share-post,share-page
 Requires at least: 2.8	+
-Tested up to: 5.5.1
-Stable tag: 3.0.0
+Tested up to: 5.5.2
+Stable tag: 3.0.1
 License: GPLv2
 
 Plugin to display Facebook, Twitter, Pinterest,Google Plus and LinkedIn as widget	on sidebar or footer, where vistor can share page as well as visit you social media profile  . 
@@ -114,3 +114,6 @@ Just leave the URL field/s empty and particular social media icon/s will not dis
 *Gutenberg block added
 *Styling changes
 *Reddit added as option for sharing
+
+=3.0.1=
+*Translation ready
