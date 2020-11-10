@@ -15,6 +15,10 @@ Plugin lets you to display Facebook, Twitter,Pinterest and LinkedIn on as widget
 
 It is very light weight , just gives user options to Follow Share using Endpoint, no API key needed.
 
+### What's Next
+Checkout out our other projects for WordPress by author
+
+[Plugins](https://profiles.wordpress.org/ujw0l/#content-plugins) - Free plugins
 
 == Installation ==
 
