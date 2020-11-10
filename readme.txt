@@ -2,7 +2,7 @@
 Contributors: ujw0l
 Tags: Social, Widget,share, Facebook, Twitter, LinkedIn,Reddit,Follow,share-post,share-page
 Requires at least: 2.8	+
-Tested up to: 5.5.1
+Tested up to: 5.5.2
 Stable tag: 3.0.1
 License: GPLv2
 
@@ -114,3 +114,6 @@ Just leave the URL field/s empty and particular social media icon/s will not dis
 *Gutenberg block added
 *Styling changes
 *Reddit added as option for sharing
+
+=3.0.1=
+*Translation ready
